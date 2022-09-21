@@ -10,7 +10,8 @@
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-![](https://github.com/mwrig067/MyTriviaFlash/blob/main/Screen%20Recording%202022-09-19%20at%2010.35.48%20PM.movE)
+![flashCard](https://user-images.githubusercontent.com/109838962/191623621-97fd3421-9991-4f7c-90bc-ec0950f7d66e.gif)
+
 
 `TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
