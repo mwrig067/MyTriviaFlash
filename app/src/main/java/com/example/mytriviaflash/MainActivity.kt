@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +24,20 @@ class MainActivity : AppCompatActivity() {
             flashCardQuestion.visibility = View.INVISIBLE
             flashCardAnswer.visibility = View.VISIBLE
         }
-        addButton.setOnClickListener {
-            val intent = Intent (this,AddCardActivity::class.java)
-            startActivity(intent)
+
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result-> {
+
+        }
+            val data: Intent? = result.data
+            //TODO: extract data
+        }
+
+            addButton.setOnClickListener {
+                val intent = Intent (this,AddCardActivity::class.java)
+
+                resultLauncher.launch(intent)
+            }
         }
 
     }
