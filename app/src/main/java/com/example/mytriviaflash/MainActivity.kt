@@ -30,17 +30,27 @@ class MainActivity : AppCompatActivity() {
 
         }
             val data: Intent? = result.data
-            //TODO: extract data
+
+
+               if (data != null) {
+
+                   val questionString = data.getStringExtra("QUESTION_KEY")
+                   val answerString = data.getStringExtra("ANSWER_KEY")
+
+                   flashCardQuestion.text = questionString
+                   flashCardAnswer.text = answerString
+               }
+
+
         }
 
-            addButton.setOnClickListener {
+        addButton.setOnClickListener {
                 val intent = Intent (this,AddCardActivity::class.java)
 
                 resultLauncher.launch(intent)
             }
         }
 
-    }
 
 
 
