@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
@@ -16,8 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         val flashCardQuestion = findViewById<TextView>(R.id.flashcard_question)
         val flashCardAnswer = findViewById<TextView>(R.id.flashcard_answer)
-        val addButton = findViewById<ImageView>(R.id.icon_add)
-
 
 
         flashCardQuestion.setOnClickListener {
@@ -43,8 +40,8 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-
-        addButton.setOnClickListener {
+                val addButton = findViewById<ImageView>(R.id.icon_add)
+                    addButton.setOnClickListener {
                 val intent = Intent (this,AddCardActivity::class.java)
 
                 resultLauncher.launch(intent)
