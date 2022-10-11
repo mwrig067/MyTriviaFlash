@@ -45,6 +45,9 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent (this,AddCardActivity::class.java)
 
                 resultLauncher.launch(intent)
+
+
+
             }
         }
 
