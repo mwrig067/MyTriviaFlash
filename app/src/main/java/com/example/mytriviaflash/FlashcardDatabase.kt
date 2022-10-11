@@ -1,4 +1,4 @@
-package com.yourpackage.packagenamehere
+package com.example.mytriviaflash
 
 import android.content.Context
 import androidx.room.Room
