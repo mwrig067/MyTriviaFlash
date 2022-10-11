@@ -3,6 +3,7 @@ package com.example.mytriviaflash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -38,30 +39,29 @@ class MainActivity : AppCompatActivity() {
             flashCardAnswer.visibility = View.VISIBLE
         }
 
-        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            result-> {
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            {
 
-        }
+            }
             val data: Intent? = result.data
 
 
-               if (data != null) {
+            if (data != null) {
 
-                   val questionString = data.getStringExtra("QUESTION_KEY")
-                   val answerString = data.getStringExtra("ANSWER_KEY")
+                val questionString = data.getStringExtra("QUESTION_KEY")
+                val answerString = data.getStringExtra("ANSWER_KEY")
 
-                   flashCardQuestion.text = questionString
-                   flashCardAnswer.text = answerString
+                flashCardQuestion.text = questionString
+                flashCardAnswer.text = answerString
 
-                   log.i( "Mathew: MainActivity", "question: $questionString")
-                   log.i( "Mathew: MainActivity", "answer: $questionString")
+                Log.i("Mathew: MainActivity", "question: $questionString")
+                Log.i("Mathew: MainActivity", "answer: $questionString")
 
-               }
-                 if(!questionString.isNullOrEmpaty() && !answerSrting.isNullOrEmpty ())
-                     flashcardDatabase.insertCard(Flashcard( questionString, answerString))
+                if (!questionString.isNullOrEmpty() && !answerString.isNullOrEmpty())
+                    flashcardDatabase.insertCard(Flashcard(questionString, answerString))
+                allFlashcard = flashcardDatabase.getAllCards().toMutableList()
 
-
-
+            }
         }
                 val addButton = findViewById<ImageView>(R.id.icon_add)
                     addButton.setOnClickListener {
