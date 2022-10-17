@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val flashCardQuestion = findViewById<TextView>(R.id.flashcard_question)
         val flashCardAnswer = findViewById<TextView>(R.id.flashcard_answer)
 
-        Log.i("MainActivity", String.format("Size of All FlashCards {%d}", allFlashcard.size))
+
         if (allFlashcard.size > 0) {
             flashCardQuestion.text = allFlashcard[0].question
             flashCardAnswer.text = allFlashcard[0].answer
@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            {
 
-            }
             val data: Intent? = result.data
 
 
@@ -72,31 +70,39 @@ class MainActivity : AppCompatActivity() {
 
 
             }
+
         val nextButton = findViewById<ImageView>(R.id.flashcard_next_button)
         nextButton.setOnClickListener {
-            if (allFlashcard.isEmpty()) {
-                // early return so that the rest of the code doesn't execute
-                return@setOnClickListener
+            // not empty
+           if (allFlashcard.isEmpty()){
 
-            }
+               return@setOnClickListener
+           }
+            // increment counter
             currCardDisplayedIndex++
 
+            // makes sure counter is not out of bounds
             if (currCardDisplayedIndex >= allFlashcard.size) {
-                // go back to the beginning
                 currCardDisplayedIndex = 0
 
             }
 
             allFlashcard = flashcardDatabase.getAllCards().toMutableList()
-
+              //  [{q,a} ,  {q1,a1} , {q2,a2}]
+            //       0          1         2        3
             val question = allFlashcard[currCardDisplayedIndex].question
             val answer = allFlashcard[currCardDisplayedIndex].answer
 
             flashCardQuestion.text = question
             flashCardAnswer.text = answer
 
+            flashCardQuestion.visibility = View.VISIBLE
+            flashCardAnswer.visibility = View.INVISIBLE
+
 
         }
 
     }
+
+    // set On click
 }
