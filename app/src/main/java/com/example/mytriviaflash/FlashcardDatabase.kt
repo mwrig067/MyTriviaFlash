@@ -35,6 +35,8 @@ class FlashcardDatabase internal constructor(context: Context) {
     }
 
     fun deleteAll() {
+
+
         for (flashcard in db.flashcardDao().getAll()) {
             db.flashcardDao().delete(flashcard)
         }

@@ -26,6 +26,15 @@ class MainActivity : AppCompatActivity() {
 
         val flashCardQuestion = findViewById<TextView>(R.id.flashcard_question)
         val flashCardAnswer = findViewById<TextView>(R.id.flashcard_answer)
+        val flashCardDelete = findViewById<ImageView>(R.id.flashcard_delete_icon)
+
+
+
+        flashCardDelete.setOnClickListener {
+            val flashcardQuestionToDelete = flashCardQuestion.text.toString()
+            flashcardDatabase.deleteCard(flashcardQuestionToDelete)
+            Log.i("Main Activity","press delete")
+        }
 
 
         if (allFlashcard.size > 0) {
@@ -93,6 +102,7 @@ class MainActivity : AppCompatActivity() {
             val question = allFlashcard[currCardDisplayedIndex].question
             val answer = allFlashcard[currCardDisplayedIndex].answer
 
+
             flashCardQuestion.text = question
             flashCardAnswer.text = answer
 
@@ -102,7 +112,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        }
+
     }
 
-    // set On click
-}
+
+
