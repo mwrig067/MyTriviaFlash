@@ -12,7 +12,11 @@ Update: This app allows users to input a question and anwser. The app will displ
 
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/109838962/196330472-2209825a-4f05-483b-a180-354c44b38b5b.gif)
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/109838962/196473475-7cd28061-d279-421f-a5d1-5a953be07f72.gif)
+
+
+
+ https://user-images.githubusercontent.com/109838962/196473630-5ad42fe9-d78b-4d82-a4ef-65fc243c0c30.mov
+
 
 
 
