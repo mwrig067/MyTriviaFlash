@@ -11,12 +11,6 @@ Update: This app allows users to input a question and anwser. The app will displ
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
 New - ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/109838962/197694182-f84d26ca-ee89-4b1b-94d1-70cfcddbb851.gif)
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/109838962/196330472-2209825a-4f05-483b-a180-354c44b38b5b.gif)
-
-https://user-images.githubusercontent.com/109838962/196473630-5ad42fe9-d78b-4d82-a4ef-65fc243c0c30.mov
-
-
-
 
 
 ## Required
